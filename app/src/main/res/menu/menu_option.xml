@@ -10,16 +10,16 @@
             android:title="Infomation"
             android:icon="@drawable/ic_info_foreground"/>
     </group>
-    <item android:title="Danh Mục Sản Phẩm">
+    <item android:title="Admin">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/navDog"
-                    android:title="Food for Dog"
+                    android:id="@+id/navPro"
+                    android:title="Add Products"
                     android:icon="@drawable/ic_dog_foreground"/>
                 <item
-                    android:id="@+id/navCat"
-                    android:title="Food for Cat"
+                    android:id="@+id/navCate"
+                    android:title="Add Categories"
                     android:icon="@drawable/ic_cat_foreground"/>
             </group>
         </menu>

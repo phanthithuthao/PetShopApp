@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
     android:fitsSystemWindows="true"
-    tools:context=".CatActivity"
+    tools:context=".CategroriesActivity"
     tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
@@ -54,10 +54,37 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvPageCatTD"
-                android:text="SẢN PHẨM DÀNH CHO MÈO"
+                android:id="@+id/tvPageCateTD"
+                android:text="ADD CATEGORIES"
                 android:textSize="13pt"
                 app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0pt"
+                android:id="@+id/tvNameCate"
+                android:text="NAME: "
+                android:gravity="center_vertical"
+                android:textSize="13pt"
+                app:layout_constraintTop_toBottomOf="@+id/tvPageCateTD"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/etNameCate"/>
+            <EditText
+                android:layout_width="0pt"
+                android:layout_height="wrap_content"
+                android:id="@+id/etNameCate"
+                android:textSize="13pt"
+                app:layout_constraintTop_toTopOf="@id/tvNameCate"
+                app:layout_constraintLeft_toRightOf="@id/tvNameCate"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddCate"
+                android:text="ADD"
+                android:textSize="13pt"
+                app:layout_constraintTop_toBottomOf="@id/tvNameCate"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"/>
 

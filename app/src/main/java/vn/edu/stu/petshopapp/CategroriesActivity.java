@@ -14,7 +14,7 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class CatActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class CategroriesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
@@ -23,7 +23,7 @@ public class CatActivity extends AppCompatActivity implements NavigationView.OnN
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cat);
+        setContentView(R.layout.activity_add_categrories);
         addControls();
         addEvents();
     }
@@ -70,16 +70,16 @@ public class CatActivity extends AppCompatActivity implements NavigationView.OnN
         int itemId = item.getItemId();
 
         if (itemId == R.id.navInfo) {
-            Intent intent = new Intent(CatActivity.this, AboutActivity.class);
+            Intent intent = new Intent(CategroriesActivity.this, AboutActivity.class);
             startActivity(intent);
         } else if (itemId == R.id.navHome){
-            Intent intent = new Intent(CatActivity.this, HomeActivity.class);
+            Intent intent = new Intent(CategroriesActivity.this, HomeActivity.class);
             startActivity(intent);
-        } else if (itemId == R.id.navCat) {
-            Intent intent = new Intent(CatActivity.this, CatActivity.class);
+        } else if (itemId == R.id.navCate) {
+            Intent intent = new Intent(CategroriesActivity.this, CategroriesActivity.class);
             startActivity(intent);
         }else {
-            Intent intent = new Intent(CatActivity.this, DogActivity.class);
+            Intent intent = new Intent(CategroriesActivity.this, ProductsActivity.class);
             startActivity(intent);
         }
 
