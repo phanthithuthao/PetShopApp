@@ -36,7 +36,7 @@ public class DetailProductActivity extends AppCompatActivity implements Navigati
     ImageView imgProduct;
     TextView tvShowDetailID,tvShowDetailNP,tvShowDescription,tvShowType,tvShowPrice;
     Button btnAddCart;
-    int id = 1;
+    int id = -1;
     Cursor cursor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +68,8 @@ public class DetailProductActivity extends AppCompatActivity implements Navigati
 
     private void xuLyChiTietSanPham() {
         Intent intent = getIntent();
-        id = intent.getIntExtra("ID", 1);
-        if (id == 1) {
+        id = intent.getIntExtra("ID", -1);
+        if (id == -1) {
             Toast.makeText(DetailProductActivity.this, "Loi", Toast.LENGTH_SHORT).show();
         }
 
