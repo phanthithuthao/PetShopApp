@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -18,8 +19,8 @@ public class CategroriesActivity extends AppCompatActivity implements Navigation
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-
     View navInfo;
+    EditText etNameCate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
