@@ -143,10 +143,13 @@ public class DetailProductActivity extends AppCompatActivity implements Navigati
             Intent intent = new Intent(DetailProductActivity.this, HomeActivity.class);
             startActivity(intent);
         } else if (itemId == R.id.navCate) {
-            Intent intent = new Intent(DetailProductActivity.this, CategroriesActivity.class);
+            Intent intent = new Intent(DetailProductActivity.this, AddCategroriesActivity.class);
             startActivity(intent);
-        } else {
-            Intent intent = new Intent(DetailProductActivity.this, ProductsActivity.class);
+        } else if(itemId == R.id.navShowCate){
+            Intent intent = new Intent(DetailProductActivity.this, ShowCategroriesActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(DetailProductActivity.this, AddProductsActivity.class);
             startActivity(intent);
         }
 

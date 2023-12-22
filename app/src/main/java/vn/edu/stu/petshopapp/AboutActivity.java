@@ -171,10 +171,13 @@ public class AboutActivity extends AppCompatActivity implements OnMapReadyCallba
             Intent intent = new Intent(AboutActivity.this, HomeActivity.class);
             startActivity(intent);
         } else if (itemId == R.id.navCate) {
-            Intent intent = new Intent(AboutActivity.this, CategroriesActivity.class);
+            Intent intent = new Intent(AboutActivity.this, AddCategroriesActivity.class);
+            startActivity(intent);
+        }else if(itemId == R.id.navShowCate){
+            Intent intent = new Intent(AboutActivity.this, ShowCategroriesActivity.class);
             startActivity(intent);
         }else {
-            Intent intent = new Intent(AboutActivity.this, ProductsActivity.class);
+            Intent intent = new Intent(AboutActivity.this, AddProductsActivity.class);
             startActivity(intent);
         }
 

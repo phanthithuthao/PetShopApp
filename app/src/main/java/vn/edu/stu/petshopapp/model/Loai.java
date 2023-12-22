@@ -4,8 +4,8 @@ public class Loai {
     private int ID;
     private String Loai;
 
-    public Loai(String loai) {
-        Loai = loai;
+    public Loai() {
+
     }
 
     public Loai(int ID, String loai) {
@@ -31,6 +31,9 @@ public class Loai {
 
     @Override
     public String toString() {
-        return Loai;
+        return "Loai{" +
+                "ID=" + ID +
+                ", Loai='" + Loai + '\'' +
+                '}';
     }
 }

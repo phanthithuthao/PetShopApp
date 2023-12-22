@@ -3,23 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <TextView
-        android:layout_width="0pt"
-        android:layout_height="0pt"
         android:id="@+id/tvNameRowCate"
-        android:text="Name"
+        android:layout_width="240dp"
+        android:layout_height="0pt"
+        android:layout_marginLeft="10pt"
         android:gravity="center_vertical"
-        android:textSize="13pt"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="NAME"
+        android:textSize="10pt"
+        app:layout_constraintBottom_toBottomOf="@id/btnDelCate"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/btnDelRowCate"
-        app:layout_constraintBottom_toBottomOf="@id/btnDelRowCate"/>
+        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnDelRowCate"
-        android:text="Delete"
-        app:layout_constraintLeft_toRightOf="@+id/tvNameRowCate"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvNameRowCate"/>
+        android:id="@+id/btnDelCate"
+        android:text="Del"
+        android:layout_marginLeft="80px"
+        app:layout_constraintTop_toTopOf="@id/tvNameRowCate"
+        app:layout_constraintLeft_toRightOf="@id/tvNameRowCate"
+        app:layout_constraintRight_toRightOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

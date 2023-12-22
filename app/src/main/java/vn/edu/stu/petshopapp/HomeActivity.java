@@ -16,8 +16,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -239,10 +237,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
             startActivity(intent);
         } else if (itemId == R.id.navCate) {
-            Intent intent = new Intent(HomeActivity.this, CategroriesActivity.class);
+            Intent intent = new Intent(HomeActivity.this, AddCategroriesActivity.class);
             startActivity(intent);
-        } else {
-            Intent intent = new Intent(HomeActivity.this, ProductsActivity.class);
+        } else if(itemId == R.id.navShowCate){
+            Intent intent = new Intent(HomeActivity.this, ShowCategroriesActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(HomeActivity.this, AddProductsActivity.class);
             startActivity(intent);
         }
 

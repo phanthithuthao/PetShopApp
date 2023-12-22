@@ -45,7 +45,6 @@ public class SPAdapter extends ArrayAdapter<SP> {
 
         SP sp = this.ls.get(position);
 
-        // Chuyển đổi ID và Loai thành String trước khi setText
         txtMa.setText(String.valueOf(sp.getID()));
         txtLoai.setText(sp.getLoai());
 

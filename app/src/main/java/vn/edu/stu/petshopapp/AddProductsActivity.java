@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import vn.edu.stu.petshopapp.Database.Database;
 import vn.edu.stu.petshopapp.model.Loai;
 
-public class ProductsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class AddProductsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
@@ -199,16 +199,19 @@ public class ProductsActivity extends AppCompatActivity implements NavigationVie
         int itemId = item.getItemId();
 
         if (itemId == R.id.navInfo) {
-            Intent intent = new Intent(ProductsActivity.this, AboutActivity.class);
+            Intent intent = new Intent(AddProductsActivity.this, AboutActivity.class);
             startActivity(intent);
         } else if (itemId == R.id.navHome){
-            Intent intent = new Intent(ProductsActivity.this, HomeActivity.class);
+            Intent intent = new Intent(AddProductsActivity.this, HomeActivity.class);
             startActivity(intent);
         } else if (itemId == R.id.navCate) {
-            Intent intent = new Intent(ProductsActivity.this, CategroriesActivity.class);
+            Intent intent = new Intent(AddProductsActivity.this, AddCategroriesActivity.class);
             startActivity(intent);
-        } else {
-            Intent intent = new Intent(ProductsActivity.this, ProductsActivity.class);
+        } else if(itemId == R.id.navShowCate){
+            Intent intent = new Intent(AddProductsActivity.this, ShowCategroriesActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(AddProductsActivity.this, AddProductsActivity.class);
             startActivity(intent);
         }
 
