@@ -31,9 +31,6 @@ public class Loai {
 
     @Override
     public String toString() {
-        return "Loai{" +
-                "ID=" + ID +
-                ", Loai='" + Loai + '\'' +
-                '}';
+        return Loai + '\n';
     }
 }

@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -30,6 +31,9 @@ public class AddCategroriesActivity extends AppCompatActivity implements Navigat
     EditText etNameCate;
     Button btnAddCate;
     String DATABASE_NAME = "data.sqlite";
+
+    int id = -1;
+    Cursor cursor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

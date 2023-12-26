@@ -35,7 +35,7 @@ public class DetailProductActivity extends AppCompatActivity implements Navigati
 
     ImageView imgProduct;
     TextView tvShowDetailID,tvShowDetailNP,tvShowDescription,tvShowType,tvShowPrice;
-    Button btnAddCart;
+    Button btnAddCart,btnAddNewProduct,btnUpdateProduct;
     int id = -1;
     Cursor cursor;
     @Override
@@ -45,6 +45,7 @@ public class DetailProductActivity extends AppCompatActivity implements Navigati
         addControls();
         addEvents();
         hienThiAccountName();
+
     }
 
     private void addControls() {
@@ -59,11 +60,21 @@ public class DetailProductActivity extends AppCompatActivity implements Navigati
         tvShowDescription = findViewById(R.id.tvShowDescription);
         tvShowType = findViewById(R.id.tvShowType);
         tvShowPrice = findViewById(R.id.tvShowPrice);
+        btnAddCart = findViewById(R.id.btnAddCart);
+        btnAddNewProduct = findViewById(R.id.btnAddNewProduct);
+        btnUpdateProduct = findViewById(R.id.btnUpdateProduct);
     }
 
     private void addEvents() {
         xuLyNav();
         xuLyChiTietSanPham();
+        btnAddNewProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailProductActivity.this, AddProductsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void xuLyChiTietSanPham() {

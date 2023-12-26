@@ -53,7 +53,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         getListFromDb();
     }
 
-    private void getListFromDb() {
+    /*private void getListFromDb() {
         SQLiteDatabase database = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
         Cursor cursor = null;
 
@@ -87,8 +87,61 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
             database.close();
         }
+    }*/
+    private void getListFromDb() {
+        SQLiteDatabase database = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
+        Cursor cursor = null;
+
+        try {
+            cursor = database.query(
+                    "Products",
+                    new String[]{"ID", "Name", "Description", "Img", "Type", "Price"},
+                    null, null, null, null, null);
+
+            while (cursor.moveToNext()) {
+                int id = cursor.getInt(0);
+                String nameProduct = cursor.getString(1);
+                String description = cursor.getString(2);
+                byte[] img = cursor.getBlob(3);
+                String type = cursor.getString(4);
+                int price = cursor.getInt(5);
+
+
+                adapter.add(new SP(id, nameProduct, description, img, type, price));
+            }
+
+            adapter.notifyDataSetChanged();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle the exception according to your needs
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            database.close();
+        }
     }
 
+    private void deleteItemFromDatabase(int itemId) {
+        SQLiteDatabase database = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
+
+        try {
+            String whereClause = "ID = ?";
+            String[] whereArgs = {String.valueOf(itemId)};
+
+            database.delete("Products", whereClause, whereArgs);
+
+            Toast.makeText(getApplicationContext(), "Item deleted successfully", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "Failed to delete item", Toast.LENGTH_SHORT).show();
+        } finally {
+            if (database != null) {
+                database.close();
+            }
+        }
+    }
     private void copyDBFromAssets() {
         File dbFile = getDatabasePath(DB_NAME);
         if (!dbFile.exists()) {
@@ -145,6 +198,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
         });
+
     }
 
     private void showDeleteConfirmationDialog(int position) {
@@ -173,7 +227,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         alertDialog.show();
     }
 
-    private void deleteItemFromDatabase(int itemId) {
+    /*private void deleteItemFromDatabase(int itemId) {
         // Open the database
         SQLiteDatabase database = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
 
@@ -197,7 +251,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 database.close();
             }
         }
-    }
+    }*/
 
     private void xuLyNav() {
         setSupportActionBar(toolbar);

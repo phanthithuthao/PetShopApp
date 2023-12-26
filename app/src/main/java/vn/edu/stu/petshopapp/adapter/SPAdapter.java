@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import java.util.List;
 import vn.edu.stu.petshopapp.AboutActivity;
 import vn.edu.stu.petshopapp.DetailProductActivity;
 import vn.edu.stu.petshopapp.R;
+import vn.edu.stu.petshopapp.UpdateProductActivity;
 import vn.edu.stu.petshopapp.model.SP;
 
 public class SPAdapter extends ArrayAdapter<SP> {
@@ -62,6 +64,16 @@ public class SPAdapter extends ArrayAdapter<SP> {
                 context.startActivity(intent);
             }
         });
+        ImageView imgAVT = (ImageView) view.findViewById(R.id.imgRowProduct);
+        imgAVT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, UpdateProductActivity.class);
+                intent.putExtra("ID", sp.ID);
+                context.startActivity(intent);
+            }
+        });
         return view;
     }
+
 }

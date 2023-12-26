@@ -2,19 +2,23 @@ package vn.edu.stu.petshopapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -117,12 +121,90 @@ public class ShowCategroriesActivity extends AppCompatActivity implements Naviga
 
     private void addEvents() {
         xuLyNav();
+        lvCate.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                showDeleteConfirmationDialog(position);
+                return false;
+            }
+        });
     }
+
+    private void showDeleteConfirmationDialog(int position) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to delete this item?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Get the item's ID from the adapter
+                        int itemId = adapter.getItem(position).getID();
+
+                        // Delete the item from the list and update the adapter
+                        ls.remove(position);
+                        adapter.notifyDataSetChanged();
+
+                        // Delete the item from the database
+                        deleteItemFromDatabase(itemId);
+
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked the "No" button, do nothing
+                    }
+                });
+        // Create and show the AlertDialog
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+    private void deleteItemFromDatabase(int categoryId) {
+        // Open the database
+        SQLiteDatabase database = openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
+
+        try {
+            // Define the WHERE clause to delete the category with the specified ID
+            String whereClause = "ID = ?";
+            String[] whereArgs = {String.valueOf(categoryId)};
+
+            // Delete the category from the database
+            database.delete("Categories", whereClause, whereArgs);
+
+            // Notify the user of successful deletion
+            Toast.makeText(getApplicationContext(), "Category deleted successfully", Toast.LENGTH_SHORT).show();
+
+            // Remove the category from the adapter and update the ListView
+            ls.remove(findItemPositionById(categoryId));
+            adapter.notifyDataSetChanged();
+
+            // Check if there are no categories left in the ListView, show a message
+            if (ls.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "No categories available", Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle the exception as needed
+            Toast.makeText(getApplicationContext(), "Failed to delete category", Toast.LENGTH_SHORT).show();
+        } finally {
+            // Close the database
+            if (database != null) {
+                database.close();
+            }
+        }
+    }
+    private int findItemPositionById(int itemId) {
+        for (int i = 0; i < ls.size(); i++) {
+            if (ls.get(i).getID() == itemId) {
+                return i;
+            }
+        }
+        return -1; // Item not found
+    }
+
 
     private void xuLyNav() {
         setSupportActionBar(toolbar);
         navigationView.bringToFront();
-        setTitle("Categrories");
+        setTitle("Categories");
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
                 drawerLayout,
