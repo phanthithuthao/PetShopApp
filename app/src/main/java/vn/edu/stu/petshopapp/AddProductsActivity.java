@@ -149,6 +149,8 @@ public class AddProductsActivity extends AppCompatActivity implements Navigation
         } else {
             Toast.makeText(getApplicationContext(), "Please select a category", Toast.LENGTH_LONG).show();
         }
+        Intent intent = new Intent(AddProductsActivity.this,HomeActivity.class);
+        startActivity(intent);
     }
 
     private byte[] getByteArrayFromImageView(ImageView imgv) {

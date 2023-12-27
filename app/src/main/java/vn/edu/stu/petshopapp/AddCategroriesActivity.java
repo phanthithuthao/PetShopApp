@@ -78,6 +78,8 @@ public class AddCategroriesActivity extends AppCompatActivity implements Navigat
                 database.close();
             }
         }
+        Intent intent = new Intent(AddCategroriesActivity.this,ShowCategroriesActivity.class);
+        startActivity(intent);
     }
 
     private void xuLyNav() {

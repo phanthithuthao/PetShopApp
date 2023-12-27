@@ -4,11 +4,11 @@
         <item
             android:id="@+id/navHome"
             android:icon="@drawable/ic_home_foreground"
-            android:title="Home" />
+            android:title="@string/Home" />
         <item
             android:id="@+id/navInfo"
             android:icon="@drawable/ic_info_foreground"
-            android:title="Infomation" />
+            android:title="@string/Infomation" />
     </group>
     <item android:title="Admin">
         <menu>
@@ -16,11 +16,11 @@
                 <item
                     android:id="@+id/navPro"
                     android:icon="@drawable/ic_dog_foreground"
-                    android:title="Add Products" />
+                    android:title="@string/menu_add_product" />
                 <item
                     android:id="@+id/navCate"
                     android:icon="@drawable/ic_cat_foreground"
-                    android:title="Add Categories" />
+                    android:title="@string/menu_add_categories" />
             </group>
         </menu>
     </item>
@@ -30,7 +30,7 @@
                 <item
                     android:id="@+id/navShowCate"
                     android:icon="@drawable/ic_categrories_foreground"
-                    android:title="Show Categrories" />
+                    android:title="@string/" />
             </group>
         </menu>
     </item>

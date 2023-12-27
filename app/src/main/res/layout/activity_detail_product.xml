@@ -191,16 +191,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Add New Products"
-                app:layout_constraintBottom_toBottomOf="@id/btnUpdateProduct"
+                app:layout_constraintBottom_toBottomOf="@id/btnExitProduct"
                 app:layout_constraintLeft_toRightOf="@id/btnAddCart"
-                app:layout_constraintRight_toLeftOf="@id/btnUpdateProduct"
+                app:layout_constraintRight_toLeftOf="@id/btnExitProduct"
                 app:layout_constraintTop_toTopOf="@id/btnAddCart" />
 
             <Button
-                android:id="@+id/btnUpdateProduct"
+                android:id="@+id/btnExitProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Update"
+                android:text="Exit"
                 app:layout_constraintLeft_toRightOf="@id/btnAddNewProduct"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/btnAddNewProduct" />

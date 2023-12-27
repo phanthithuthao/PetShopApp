@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ứng Dụng PetShop</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_maps">Bản Đồ</string>
+    <string name="title_activity_main">CHÀO MỪNG BẠN ĐÃ ĐẾN VỚI PETSHOP</string>
+    <string name="button_activity_main">Bắt Đầu</string>
+    <string name="signin">Đăng Nhập</string>
+    <string name="username">Tài khoản</string>
+    <string name="password">Mật khẩu</string>
+    <string name="login">Xác Nhận</string>
+    <string name="question">Bạn đã có tài khoản? Đăng ký</string>
+    <string name="Home">Trang Chủ</string>
+    <string name="Infomation">Về Chúng Tôi</string>
+    <string name="menu_add_product">Thêm Sản Phẩm</string>
+    <string name="menu_add_categories">Thêm Loại Sản Phẩm</string>
+    <string name="menu_show_categories">Loại sản phẩm </string>
+</resources>

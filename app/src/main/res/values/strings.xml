@@ -3,4 +3,16 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_main">WELCOME TO MY PETSHOP</string>
+    <string name="button_activity_main">Get Started</string>
+    <string name="signin">Sign In</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="question">New User? Sign Up</string>
+    <string name="Home">Home</string>
+    <string name="Infomation">Infomation</string>
+    <string name="menu_add_product">Add Products</string>
+    <string name="menu_add_categories">Add Categories</string>
+    <string name="menu_show_categories">Show Categories</string>
 </resources>

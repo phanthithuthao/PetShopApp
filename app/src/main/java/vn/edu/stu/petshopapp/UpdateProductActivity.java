@@ -102,6 +102,8 @@
                 @Override
                 public void onClick(View v) {
                    xuLyUpdate();
+                    Intent intent = new Intent(UpdateProductActivity.this,HomeActivity.class);
+                    startActivity(intent);
                 }
             });
         }
